@@ -1,9 +1,8 @@
 #!/bin/sh
 
-wget -qO - https://package.perforce.com/perforce.pubkey | sudo apt-key add -
-echo "deb http://package.perforce.com/apt/ubuntu trusty release" > /etc/apt/sources.list.d/perforce.list
-sudo apt-get update
-sudo apt-get install helix-p4d
+wget ftp://ftp.perforce.com/perforce/r18.1/bin.linux26x86_64/p4d
+chmod +x p4d
+sudo mv p4d /usr/local/bin
 sudo adduser perforce
 sudo mkdir /perforce_depot
 sudo chown perforce /perforce_depot
