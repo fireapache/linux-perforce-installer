@@ -1,0 +1,8 @@
+#!/bin/sh
+
+pkill -9 -u perforce
+
+wget ftp://ftp.perforce.com/perforce/r19.2/bin.linux26x86_64/p4d
+chmod +x p4d
+sudo mv -f p4d /usr/local/bin
+sudo reboot
