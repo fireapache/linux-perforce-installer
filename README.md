@@ -1,6 +1,6 @@
 # About
 
-This script will install Perforce Server 2015.1 on a 64-bit linux host. It has only been tested on Ubuntu so far. If you are looking for an Ubuntu host, I recommend using Vultr or UpCloud for hosting a virtual Ubuntu server.
+This script will install Perforce Server 2020.1 on a 64-bit linux host. It has only been tested on Ubuntu so far. If you are looking for an Ubuntu host, I recommend using Vultr or UpCloud for hosting a virtual Ubuntu server.
 
 # Usage
 
