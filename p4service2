@@ -1,0 +1,51 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides: p4dservice2
+# Required-Start:
+# Required-Stop:
+# Should-Start:
+# Should-Stop:
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: Start and Stop
+# Description:
+### END INIT INFO
+
+export P4JOURNAL=/var/log/perforce2/journal
+export P4LOG=/var/log/perforce2/p4err
+export P4ROOT=/perforce_depot2
+export P4PORT=1999
+
+PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
+
+. /lib/lsb/init-functions
+
+p4start="p4d -d"
+p4stop="p4 admin stop"
+p4user=perforce2
+
+case "$1" in
+  start)
+    log_action_begin_msg "Starting Perforce Server"
+    daemon -u $p4user -- $p4start;
+    ;;
+
+  stop)
+    log_action_begin_msg "Stopping Perforce Server"
+    daemon -u $p4user -- $p4stop;
+    ;;
+
+  restart)
+    stop
+    start
+    ;;
+
+*)
+  echo "Usage: /etc/init.d/perforce2 (start|stop|restart)"
+  exit 1
+  ;;
+
+esac
+
+exit 0
