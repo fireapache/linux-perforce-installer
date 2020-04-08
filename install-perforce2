@@ -1,0 +1,12 @@
+sudo adduser perforce2
+sudo mkdir /perforce_depot2
+sudo chown perforce2 /perforce_depot2
+sudo mkdir /var/log/perforce2
+sudo chown perforce2 /var/log/perforce2
+cd /
+wget https://raw.githubusercontent.com/fireapache/linux-perforce-installer/master/p4dservice2
+chmod +x p4dservice2
+sudo mv p4dservice2 /etc/init.d
+cd /etc/init.d
+sudo update-rc.d p4dservice2 defaults
+sudo reboot
